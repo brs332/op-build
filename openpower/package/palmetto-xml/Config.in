@@ -1,0 +1,29 @@
+config BR2_PACKAGE_PALMETTO_XML
+        bool "palmetto_xml"
+        default y if (BR2_OPENPOWER_PLATFORM && BR2_powerpc_power8)
+        help
+            Utilites for building xml and the targeting binary image
+
+config BR2_PALMETTO_TARGETING_BIN_FILENAME
+        string "Palmetto targeting binary file name"
+        default ""
+        help
+            Defines targeting binary file name created
+
+config BR2_PALMETTO_TARGETING_ECC_FILENAME
+        string "Palmetto targeting binary file name - ecc injected"
+        default ""
+        help
+            Defines targeting binary ecc file name created
+
+config BR2_PALMETTO_SYSTEM_XML_FILENAME
+        string "Palmetto targeting system xml filename"
+        default ""
+        help
+            Defines the name of the system XML filename to be used when creating targeting binary image
+
+config BR2_PALMETTO_MRW_XML_FILENAME
+        string "Palmetto targeting mrw xml filename"
+        default ""
+        help
+            Defines the name of the mrw XML filename to be used when creating targeting binary image
