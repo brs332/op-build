@@ -4,10 +4,9 @@
 #
 ################################################################################
 
-HOSTBOOT_VERSION = 4be326b67baab8bfce4923b8468abd211884a568
-HOSTBOOT_SITE = /home/bsilver/open-power/hostboot
-HOSTBOOT_SITE_METHOD=local
-#HOSTBOOT_SITE = $(call github,open-power,hostboot,$(HOSTBOOT_VERSION))
+HOSTBOOT_VERSION = 72c47279630906a0b38b4a0b9a68a93557d73977
+HOSTBOOT_SITE = $(call github,brs332,hostboot,$(HOSTBOOT_VERSION))
+
 HOSTBOOT_LICENSE = Apache-2.0
 HOSTBOOT_DEPENDENCIES = host-binutils
 

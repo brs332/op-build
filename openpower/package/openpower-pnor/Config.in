@@ -45,3 +45,8 @@ config BR2_OPENPOWER_TARGETING_BIN_FILENAME
         string "Name of openpower binary targeting file"
         help
             String used to define name of openpower targeting binary file
+
+config BR2_OPENPOWER_TARGETING_ECC_FILENAME
+        string "Name of openpower binary targeting file"
+        help
+            String used to define name of openpower targeting binary file, ecc protected

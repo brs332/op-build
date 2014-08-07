@@ -1,54 +1,51 @@
 ################################################################################
 #
-# palmetto_xml
+# habanero_xml
 #
 ################################################################################
 
-PALMETTO_XML_VERSION = 74b7b5231b9d28d7635ea08fed209295bec395fd
-PALMETTO_XML_SITE = /home/bsilver/open-power/palmetto-xml
-PALMETTO_XML_SITE_METHOD=local
-#PALMETTO_XML_SITE = $(call github,open-power,hostboot-targeting,$(PALMETTO_XML_VERSION))
-PALMETTO_XML_LICENSE = Apache-2.0
-PALMETTO_XML_DEPENDENCIES = hostboot-install-images openpower-mrw-install-images common-xml-install-images
+HABANERO_XML_VERSION = 1dd07e7d896e35a5ec37a51cb8d6e59c88333198
+HABANERO_XML_SITE = $(call github,brs332,habanero-xml,$(HABANERO_XML_VERSION))
+HABANERO_XML_LICENSE = Apache-2.0
+HABANERO_XML_DEPENDENCIES = hostboot-install-images openpower-mrw-install-images common-xml-install-images
 
-PALMETTO_XML_INSTALL_IMAGES = YES
-PALMETTO_XML_INSTALL_TARGET = NO
+HABANERO_XML_INSTALL_IMAGES = YES
+HABANERO_XML_INSTALL_TARGET = NO
 
 MRW_SCRATCH=$(STAGING_DIR)/openpower_mrw_scratch
 MRW_INSTALL_DIRECTORY=$(STAGING_DIR)/preprocessed_mrw
 MRW_HB_TOOLS=$(STAGING_DIR)/hostboot_build_images
 
-PALMETTO_XML_ENV_VARS= \
+HABANERO_XML_ENV_VARS= \
     SCHEMA_FILE=$(MRW_SCRATCH)/schema/mrw.xsd \
     PARSER_PATH=$(STAGING_DIR)/usr/bin \
     XSL_PATH=$(MRW_SCRATCH)/xslt \
     OUTPUT_PATH=$(MRW_INSTALL_DIRECTORY)
 
-define PALMETTO_XML_BUILD_CMDS
-        # copy the palmetto xml where the common lives
+define HABANERO_XML_BUILD_CMDS
+        # copy the habanero xml where the common lives
         bash -c 'mkdir -p $(MRW_SCRATCH) && cp -r $(@D)/* $(MRW_SCRATCH)'
         mkdir -p $(MRW_INSTALL_DIRECTORY)
 
         # run the mrw parsers
-        $(PALMETTO_XML_ENV_VARS) bash -c 'cd $(MRW_SCRATCH) && $(MAKE) palmetto'
+        $(HABANERO_XML_ENV_VARS) bash -c 'cd $(MRW_SCRATCH) && $(MAKE) habanero'
 
         # generate the system mrm xml
         $(MRW_HB_TOOLS)/genHwsvMrwXml.pl \
             --system=$(BR2_OPENPOWER_CONFIG_NAME) \
             --mrwdir=$(MRW_INSTALL_DIRECTORY) \
-            --build=hb > $(MRW_INSTALL_DIRECTORY)/$(BR2_PALMETTO_MRW_XML_FILENAME)
-
+            --build=hb > $(MRW_INSTALL_DIRECTORY)/$(BR2_HABANERO_MRW_XML_FILENAME)
 endef
 
-define PALMETTO_XML_INSTALL_IMAGES_CMDS
+define HABANERO_XML_INSTALL_IMAGES_CMDS
 
         # merge in any system specific attributes, hostboot attributes
-        $(MRW_HB_TOOLS)/mergexml.sh $(@D)/$(BR2_PALMETTO_SYSTEM_XML_FILENAME) \
+        $(MRW_HB_TOOLS)/mergexml.sh $(@D)/$(BR2_HABANERO_SYSTEM_XML_FILENAME) \
             $(MRW_HB_TOOLS)/attribute_types.xml \
             $(MRW_HB_TOOLS)/attribute_types_hb.xml \
             $(MRW_HB_TOOLS)/target_types_merged.xml \
             $(MRW_HB_TOOLS)/target_types_hb.xml \
-            $(MRW_INSTALL_DIRECTORY)/$(BR2_PALMETTO_MRW_XML_FILENAME) > $(MRW_HB_TOOLS)/temporary_hb.hb.xml;
+            $(MRW_INSTALL_DIRECTORY)/$(BR2_HABANERO_MRW_XML_FILENAME) > $(MRW_HB_TOOLS)/temporary_hb.hb.xml;
 
         # creating the targeting binary
         $(MRW_HB_TOOLS)/xmltohb.pl  \
