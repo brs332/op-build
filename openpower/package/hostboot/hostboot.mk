@@ -4,9 +4,8 @@
 #
 ################################################################################
 
-HOSTBOOT_VERSION = 72c47279630906a0b38b4a0b9a68a93557d73977
-HOSTBOOT_SITE = $(call github,brs332,hostboot,$(HOSTBOOT_VERSION))
-
+HOSTBOOT_VERSION = d0c872fdfa0516fa440e32e4208424b54df77a33
+HOSTBOOT_SITE = $(call github,sannerd,hostboot,$(HOSTBOOT_VERSION))
 HOSTBOOT_LICENSE = Apache-2.0
 HOSTBOOT_DEPENDENCIES = host-binutils
 
