@@ -4,10 +4,8 @@
 #
 ################################################################################
 
-PALMETTO_XML_VERSION = 74b7b5231b9d28d7635ea08fed209295bec395fd
-PALMETTO_XML_SITE = /home/bsilver/open-power/palmetto-xml
-PALMETTO_XML_SITE_METHOD=local
-#PALMETTO_XML_SITE = $(call github,open-power,hostboot-targeting,$(PALMETTO_XML_VERSION))
+PALMETTO_XML_VERSION = 6dcf1348bd81430abe49f88494aa13e25639976d
+PALMETTO_XML_SITE = $(call github,brs332,palmetto-xml,$(PALMETTO_XML_VERSION))
 PALMETTO_XML_LICENSE = Apache-2.0
 PALMETTO_XML_DEPENDENCIES = hostboot-install-images openpower-mrw-install-images common-xml-install-images
 
