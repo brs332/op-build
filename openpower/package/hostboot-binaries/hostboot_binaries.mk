@@ -4,8 +4,8 @@
 #
 ################################################################################
 
-HOSTBOOT_BINARIES_VERSION = ff413007856b29b351250d63cce8996489083d26
-HOSTBOOT_BINARIES_SITE = $(call github,open-power,hostboot-binaries,$(HOSTBOOT_BINARIES_VERSION))
+HOSTBOOT_BINARIES_VERSION = f06d3d171ed69f0553a3aa02685d232a1dec52dc
+HOSTBOOT_BINARIES_SITE = $(call github,sannerd,hostboot-binaries,$(HOSTBOOT_BINARIES_VERSION))
 HOSTBOOT_BINARIES_LICENSE = Apache-2.0
 
 HOSTBOOT_BINARIES_INSTALL_IMAGES = YES
