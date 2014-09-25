@@ -1,6 +1,6 @@
 config BR2_PACKAGE_PALMETTO_XML
         bool "palmetto_xml"
-        default y if (BR2_OPENPOWER_PLATFORM && BR2_powerpc_power8)
+        default y if (BR2_OPENPOWER_CONFIG_NAME = "palmetto")
         help
             Utilites for building xml and the targeting binary image
 
