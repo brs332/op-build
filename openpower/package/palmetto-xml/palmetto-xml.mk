@@ -4,7 +4,7 @@
 #
 ################################################################################
 
-PALMETTO_XML_VERSION = 6dcf1348bd81430abe49f88494aa13e25639976d
+PALMETTO_XML_VERSION = caa852b47cebff5b124d46245c29ac1d500349d5
 PALMETTO_XML_SITE = $(call github,brs332,palmetto-xml,$(PALMETTO_XML_VERSION))
 PALMETTO_XML_LICENSE = Apache-2.0
 PALMETTO_XML_DEPENDENCIES = hostboot-install-images openpower-mrw-install-images common-xml-install-images
