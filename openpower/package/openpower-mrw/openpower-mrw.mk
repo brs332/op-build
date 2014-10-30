@@ -4,7 +4,7 @@
 #
 ################################################################################
 
-OPENPOWER_MRW_VERSION = edbfb199fb1aa11af7f8fef761aff5ec4b2c6204
+OPENPOWER_MRW_VERSION = a169ab559ce219f4af045dd95d21376214b3a576
 OPENPOWER_MRW_SITE = $(call github,brs332,openpower-mrw,$(OPENPOWER_MRW_VERSION))
 OPENPOWER_MRW_LICENSE = Apache-2.0
 OPENPOWER_MRW_DEPENDENCIES =

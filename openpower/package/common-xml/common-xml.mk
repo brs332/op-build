@@ -3,7 +3,7 @@
 # common-xml
 #
 ################################################################################
-COMMON_XML_VERSION = cb1a389b34ef2506c84bdf51d16091d0e5b2772b
+COMMON_XML_VERSION = 66c173fae20d71d7e8b39ba6e48255d93de21e07
 COMMON_XML_SITE = $(call github,brs332,common-xml,$(COMMON_XML_VERSION))
 COMMON_XML_LICENSE = Apache-2.0
 COMMON_XML_DEPENDENCIES =

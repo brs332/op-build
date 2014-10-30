@@ -4,7 +4,7 @@
 #
 ################################################################################
 
-HABANERO_XML_VERSION = cdae038a82bb280781be2b37ec7a17fba403a076
+HABANERO_XML_VERSION = d1d9876021ccbb266b86019b7697ed61bf1e30d8
 HABANERO_XML_SITE = $(call github,brs332,habanero-xml,$(HABANERO_XML_VERSION))
 HABANERO_XML_LICENSE = Apache-2.0
 HABANERO_XML_DEPENDENCIES = hostboot-install-images openpower-mrw-install-images common-xml-install-images
